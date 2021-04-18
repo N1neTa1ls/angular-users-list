@@ -1,0 +1,22 @@
+<div *ngIf="user" class="container">
+  <div class="title">
+    <div class="close" title="Закрыть" (click)="closeModal()"></div>
+    <p class="name">{{ user.fname }} {{ user.name }}</p>
+  </div>
+  <div class="content">
+    <div class="form-row">
+      <div class="input">{{ user.fname }}</div>
+      <div class="input">{{ user.name }}</div>
+      <div class="input">{{ user.mname }}</div>
+    </div>
+    <div class="form-row">
+      <div class="input">
+        {{ user.currentStatus }}
+        <span class="arrow"></span>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <button class="button" (click)="closeModal()">Сохранить</button>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="block">
+    <div class="img-box">
+      <img src="../../assets/1.jpg" alt="Аватар">
+    </div>
+  
+    <p class="title">
+      {{ user.fullName }}
+    </p>
+  
+    <p class="balance">
+      Баланс: {{ user.balance | balance }}
+    </p>
+  </div>
+  
+  <div class="block">
+    <p class="last-updated">
+      Последнее изменение: {{ user.lastUpdatedAt | date:'dd.MM HH:mm' }}
+    </p>
+  
+    <div class="subscription" (mouseenter)="showPopover()" (mouseleave)="hidePopover()">
+      <div class="select">
+        {{ user.currentStatus }}
+        <span class="arrow"></span>
+      </div>
+      <div *ngIf="popoverVisible" class="popover">
+        <ul>
+          <li *ngFor="let status of statuses" [ngClass]="{ active: status === user.currentStatus }">{{ status }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>  
+</div>

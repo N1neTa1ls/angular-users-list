@@ -1,0 +1,58 @@
+:host {
+  display: block;
+  background: #F7F7F7;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+.toolbar {
+  background: #FFF;
+  height: 47px;
+  padding: 0 38px;
+  display: flex;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.07);
+}
+
+.toolbar-menu {
+  display: flex;
+  list-style: none;
+
+  li {
+    margin: 0 9px;
+    padding: 0 11px;
+    cursor: pointer;
+    color: #D0C9D6;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      color: #b5afbb;
+    }
+
+    &.active {
+      color: #000;
+      border-bottom: 3px solid #6979F8;
+    }
+  }
+}
+
+.users-container {
+  padding: 48px;
+}
+
+.modal {
+  z-index: 0;
+  opacity: 0;
+}
+
+.visible {
+  transition: opacity .3s ease;
+  opacity: 1;
+  z-index: 2;
+}

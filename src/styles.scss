@@ -1,1 +1,65 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Inter, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px
+}
+
+.button {
+  width: 180px;
+  height: 40px;
+  background: #6979F8;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  color: #FFF;
+  cursor: pointer;
+
+  &:hover {
+    background: #5e6ddf;
+  }
+
+  &:active, &:focus {
+    outline: none;
+  }
+}
+
+.form-row {
+  display: flex;
+  margin: 0 -14px 28px;
+}
+
+.input {
+  box-shadow: 0px 7px 64px 0px rgba(0, 0, 0, 0.07);
+  border: 1px solid rgba(236, 235, 237, 1);
+  width: 240px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-radius: 6px;
+  margin: 0 14px;
+  position: relative;
+  justify-content: space-between;
+}
+
+@media (max-width: 780px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .input {
+    margin: 14px 0;
+    width: 100%;
+  }
+}

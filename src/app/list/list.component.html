@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="toolbar">
+    <ul class="toolbar-menu">
+      <li *ngFor="let tab of tabs" [ngClass]="{ active: currentTab === tab.id }" (click)="changeTab(tab)">{{ tab.title }}</li>
+    </ul>
+  </div>
+  <div class="users-container">
+    <div *ngIf="users" class="list">
+      <app-list-item
+        *ngFor="let user of filteredUsers; trackBy: trackById"
+        [user]="user"
+        [statuses]="statuses"
+        (click)="showModal(user)"
+      >
+      </app-list-item>
+    </div>
+  </div>
+</div>
+
+<app-item-detail
+  class="modal"
+  [class.visible]="modalVisible"
+  [user]="selectedUser"
+  (closed)="hideModal()"
+></app-item-detail>
